@@ -1,4 +1,5 @@
 import { Directive, ElementRef, inject, input } from '@angular/core';
+import { LogDirective } from './log.directive';
 
 @Directive({
   selector: 'a[safeLinkDirective]',
@@ -6,6 +7,7 @@ import { Directive, ElementRef, inject, input } from '@angular/core';
   host: {
     '(click)': 'onLeaveSite($event)',
   },
+  hostDirectives: [LogDirective],
 })
 export class SafeLinkDirective {
   queryParam = input('myValue', { alias: 'safeLinkDirective' }); // {alias:'safeLinkDirective'}
