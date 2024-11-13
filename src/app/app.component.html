@@ -1,0 +1,20 @@
+<main>
+  <app-learning-resources />
+
+  <hr />
+
+  <app-auth />
+  <!-- <ng-template appAuth="admin">
+    <p>this is admin privileged</p>
+  </ng-template> -->
+  <!-- * means using ng-template and property binding[] structural directive -->
+  <p *appAuth="'admin'" class="protected-content admin">
+    this is admin privileged
+  </p>
+  <p *appAuth="'user'" class="protected-content authenticated">
+    this is user privileged
+  </p>
+  <p *appAuth="'guest'" class="protected-content unauthenticated">
+    this is guest privileged
+  </p>
+</main>
